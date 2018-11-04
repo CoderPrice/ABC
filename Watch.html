@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Watch</title>
+		<style>
+		body
+		{
+			background-color:#0e0c13;
+			
+		}	
+		
+		ul
+		{
+			list-style-type: circle;
+		}
+		
+		li
+		{
+			/*text-transform:capitalize;*/
+		}
+		
+		li:hover
+		{
+			list-style-type: disc;
+			cursor:pointer;
+			text-decoration: underline;
+		}
+		
+		#I_MenuBar
+		{
+			background-color:#ffffff;
+			height:39px;
+			cursor:pointer;
+		}
+		
+		#MenuScroll
+		{
+			visibility:hidden;
+			background-color:#ffffff;
+			margin-top:0px;
+			width:200px;
+			height:550px;
+			z-index:0;
+		}
+		
+		#siteId
+		{
+			position:absolute;
+			margin-top:30px;
+			margin-left:0px;
+			color:#5a585e;
+		}
+		
+		#channelLabel
+		{
+			margin-left:130px;
+			color:#eae8ee;
+			font-weight: bold;
+		}
+				
+		#l_Twitch
+		{
+			margin-left:55px;
+			color:#ffffff;
+			font-size: 30px;
+			z-index:0;
+		}
+		
+		#l_Youtube
+		{
+			margin-left:55px;
+			color:#ffffff;
+			font-size: 30px;
+			z-index:0;
+		}
+		
+		#u_TwitchChannelList
+		{
+			position:relative;
+			margin-top:10px;
+			margin-left:-20px;
+			color:#5a585e;
+			z-index:0;
+		}
+		
+		#u_YoutubeChannelList
+		{
+			position:absolute;
+			margin-top:10px;
+			margin-left:-20px;
+			color:#5a585e;
+			z-index:0;
+		}
+		
+		#d_TwitchBar
+		{
+			background-color:#000000;
+			z-index:0;
+		}
+		
+		#SearchTwitchVod
+		{
+			position:absolute;
+			background-color:#ffffff;
+			border-color: #555555;
+			border:none;
+			margin-top:-42px;
+			margin-left:45px;
+			width:282px;
+			height:33px;
+		}
+		
+		#SearchTwitchVod:focus
+		{
+			border-color: #0000e5;
+		}
+		
+		#SearchButtonTVod
+		{
+			position:absolute;
+			margin-top:-42px;
+			margin-left:340px;
+		}
+		
+		#d_YoutubeBar
+		{
+			margin-top:130px;
+			background-color:#000000;
+			z-index:0;
+		}
+		
+		#TW_SiteShow
+		{
+			visibility:hidden;
+			position:absolute;
+			margin-top:-545px;
+			margin-left:0px;
+			z-index:0;
+		}
+		
+		#YT_SiteShow
+		{
+			visibility:hidden;
+			position:absolute;
+			margin-top:-548px;
+			margin-left:0px;
+			z-index:0;
+		}
+		</style>
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="scripts/Scripts.js"></script>
+		<script src="Site/Scripts/TwitchBehaviour.js"></script>
+		<script src="Site/Scripts/YoutubeBehaviour.js"></script>
+		<script>
+			var intervalID = setInterval(SetTwitchStatus, 1300);
+		</script>
+	</head>
+
+	<body>
+			<div id="I_MenuBar">
+				<img src="MenuIcon.png" width="40" height="40" onclick="ScrollInput()">
+				
+					<div>
+					<form>
+						<input id="SearchTwitchVod" type="text" placeholder="Put the Twitch Vod link">
+					</form>
+					<img src="search.png" id="SearchButtonTVod" width="40" height="35" onclick="OpenTwitchVod()">
+				</div>
+			</div>
+			
+			<div id="MenuScroll">
+				<div id="d_TwitchBar">
+					<label id="l_Twitch">Twitch</label>
+				</div>
+				
+				 <ul id="u_TwitchChannelList">
+					<li id="alanzoka" onclick="OpenTwitchChannel('alanzoka')">Alanzoka</li>
+					<li id="lowco" onclick="OpenTwitchChannel('lowco')">Lowco</li>
+				</ul>
+			</div>
+			<!--div id="homePreview">
+			</div-->
+			<embed id="TW_SiteShow" src="Site/Twitch.html" width="382" height="580">
+			
+	</body>
+	
+</html>
