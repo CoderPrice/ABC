@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Twitch</title>
+		<script src="../scripts/Scripts.js"></script>
+		<script src="Scripts/TwitchBehaviour.js"></script>
+		<style>
+		body
+		{
+			background-color:#ff0000;
+			overflow: hidden;
+		}
+		
+		#S_ChannelId
+		{
+			visibility:visible;
+			position:absolute;
+			margin-top:-4px;
+			margin-left:120px;
+			color:#5a585e;
+		}
+		
+		#streamLive
+		{
+			position:absolute;
+			margin-top:-8px;
+			margin-left:-8px;
+		}
+		
+		#streamChat
+		{
+			position:absolute;
+			margin-top:212px;
+			margin-left:-8px;
+		}
+		</style>
+	<head>
+	
+	<body>		
+		<embed id="streamLive"  width="382" height="220">
+		<embed id="streamChat" width="382" height="360">
+	</body>
+</html>
